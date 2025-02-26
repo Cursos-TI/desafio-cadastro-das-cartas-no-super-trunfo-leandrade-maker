@@ -23,14 +23,15 @@ int main() {
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
 
     printf ("Jogo de cartas Super trunfo! \n");
+    printf("CARTA DE NÚMERO 01 \n");
 
-    printf("Estado: ", Estado);
+    printf("Estado: ");
     scanf("%c", &Estado);
 
-    printf("Código: ", codigo);
+    printf("Código: ");
     scanf("%s", &codigo);
 
-    printf("Digite o nome da cidade: ", nome);
+    printf("Digite o nome da cidade: ");
     scanf("%s", &nome);
 
     printf("Qual é o número da populaçao? ");
@@ -44,6 +45,34 @@ int main() {
 
     printf("Digite o PIB do país: ");
     scanf("%f", &PiB_);
+
+    //Segunda carta do jogo
+    //Teste com as variáveis dentro do printf
+    
+    printf("CARTA DE NÚMERO 02 \n");
+
+    printf("Estado ", Estado);
+    scanf("%c", &Estado);
+
+    printf("Código: ", codigo);
+    scanf("%s", &codigo);
+
+    printf("Digite o nome da cidade: ", nome);
+    scanf("%s", &nome);
+
+    printf("Qual é o número da população? ", poPulacao);
+    scanf("%d", &poPulacao);
+
+    printf("Digite o número de pontos turísticos: ", _numerodepontosturisticos);
+    scanf("%d", &_numerodepontosturisticos);
+
+    printf("Qual a área em metros quadrados? ", A_rea);
+    scanf("%f", &A_rea);
+
+    printf("Digite o PIB do País: ", PiB_);
+    scanf("%f", &PiB_);
+
+
 
 
 /*
