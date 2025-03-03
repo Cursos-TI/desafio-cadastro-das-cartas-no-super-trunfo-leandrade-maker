@@ -6,23 +6,33 @@
 
 int main() {
 
+    // Nivel novato.
     // Definnindo e inicializando variáveis separadas para cada atributo da cidade.
     // Atributos: Estado, código da cidade, nome, população, área, PIB, número de pontos turísticos.
 
-    char Estado;
-    char codigo [4], nome[20];
-    float poPulacao; 
+    char eStado;
+    char coDigo [4];
+    char noMe [20];
+    unsigned long int poPulacao; 
     int _numerodepontosturisticos;
-    float A_rea, PiB_;
+    float A_rea;
+    float Pib_;
 
     // declaração novas variaveis desnidade populacional e pib per capita.
 
-    float d_pOpu, Pib_cApi;
+    float d_pOpu;
+    float Pib_cApi;
 
-    // inicialização das novas variaveis.
+    // inicialização das novas variaveis para o nível aventureiro.
 
     d_pOpu = poPulacao / A_rea;
-    Pib_cApi = PiB_ / poPulacao;
+    Pib_cApi = Pib_ / poPulacao;
+
+    // Declaração da variavel super poder para o nível mestre.
+    // Calcular o super poder somando todas as características (exeto estado, código e nome).
+    // O inverso da densidade populacional (subtrair).
+
+    float suPerPower = poPulacao + _numerodepontosturisticos + A_rea + Pib_ + Pib_cApi - d_pOpu;
     
     // Cadastro das Cartas:
     // Função scanf para capturar as entradas do usuário para cada atributo.
@@ -36,16 +46,20 @@ int main() {
     */
 
     printf ("Jogo de cartas Super trunfo! \n");
-    printf("CARTA DE NÚMERO 01 \n");
+
+    printf("\n");
+
+    printf("CARTA DE NÚMERO 01");
+    printf("\n");
 
     printf("Estado: ");
-    scanf(" %c", &Estado);
+    scanf(" %c", &eStado);
 
     printf("Código: ");
-    scanf(" %s", &codigo);
+    scanf(" %s", &coDigo);
 
     printf("Digite o nome da cidade: ");
-    scanf(" %s", &nome);
+    scanf(" %s", &noMe);
 
     printf("Qual é o número da populaçao? ");
     scanf(" %lf", &poPulacao);
@@ -57,43 +71,73 @@ int main() {
     scanf(" %lf", &A_rea);
 
     printf("Digite o PIB do país: ");
-    scanf(" %lf", &PiB_);
+    scanf(" %lf", &Pib_);
 
     // novas informacoes (float implicita)
 
     printf("Densidade populacional: %.2lf \n", d_pOpu);
     printf("PIB per capita: %.2lf \n", Pib_cApi);
 
+    // super poder
+
+    printf("Superpoder: %f", suPerPower);
+
 
     //Segunda carta do jogo
     //Teste com as variáveis dentro do printf
+
+    char estado, codigo [4], cidade [20];
+    unsigned long int populacao;
+    int pontosturisticos;
+    float area, pib;
+    float densidade = populacao / area;
+    float percapita = pib / populacao;
+    float superpoder = populacao + pontosturisticos + area + pib + percapita - densidade;
+
+    printf("\n");
     
     printf("CARTA DE NÚMERO 02 \n");
 
-    printf("Estado ", Estado);
-    scanf(" %c", &Estado);
+    printf("\n");
+
+    printf("Estado ", estado);
+    scanf(" %c", &estado);
 
     printf("Código: ", codigo);
     scanf(" %s", &codigo);
 
-    printf("Digite o nome da cidade: ", nome);
-    scanf(" %s", &nome);
+    printf("Digite o nome da cidade: ", cidade);
+    scanf(" %s", &cidade);
 
-    printf("Qual é o número da população? ", poPulacao);
-    scanf(" %lf", &poPulacao);
+    printf("Qual é o número da população? ", populacao);
+    scanf(" %lf", &populacao);
 
-    printf("Digite o número de pontos turísticos: ", _numerodepontosturisticos);
-    scanf("%d", &_numerodepontosturisticos);
+    printf("Digite o número de pontos turísticos: ", pontosturisticos);
+    scanf("%d", &pontosturisticos);
 
-    printf("Qual a área em metros quadrados? ", A_rea);
-    scanf(" %lf", &A_rea);
+    printf("Qual a área em metros quadrados? ", area);
+    scanf(" %lf", &area);
 
-    printf("Digite o PIB do País: ", PiB_);
-    scanf(" %lf", &PiB_);
+    printf("Digite o PIB do País: ", pib);
+    scanf(" %lf", &pib);
 
     // novas informacoes
-    printf("Desnidade populacional:  %.2lf\n", d_pOpu);
-    printf("PIB per capita: %.2lf\n", Pib_cApi);
+    printf("Desnidade populacional:  %.2lf\n", densidade);
+    printf("PIB per capita: %.2lf\n", percapita);
+
+    // super poder
+
+    printf("Superpoder: %f\n", superpoder);
+
+
+    // Desafio evoluiu para o nível mestre.
+    // nova característica: super poder.
+    // nesse nível mudança da variável poPulacao de "float" para "unsigned long int".
+    
+    
+
+
+
 
     /*
     OBSERVAÇÃO
