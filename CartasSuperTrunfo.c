@@ -10,30 +10,23 @@ int main() {
     // Definnindo e inicializando variáveis separadas para cada atributo da cidade.
     // Atributos: Estado, código da cidade, nome, população, área, PIB, número de pontos turísticos.
 
-    char eStado;
-    char coDigo [4];
-    char noMe [20];
-    unsigned long int poPulacao; 
-    int _numerodepontosturisticos;
-    float A_rea;
-    float Pib_;
+    char estado1;
+    int codigo1;
+    char cidade1 [15];
+    unsigned long int populacao1; 
+    int numero_de_pontos_turisticos1;
+    float area1;
+    float pib1;
 
     // declaração novas variaveis desnidade populacional e pib per capita.
-
-    float d_pOpu;
-    float Pib_cApi;
-
     // inicialização das novas variaveis para o nível aventureiro.
 
-    d_pOpu = poPulacao / A_rea;
-    Pib_cApi = Pib_ / poPulacao;
 
     // Declaração da variavel super poder para o nível mestre.
     // Calcular o super poder somando todas as características (exeto estado, código e nome).
     // O inverso da densidade populacional (subtrair).
 
-    float suPerPower = poPulacao + _numerodepontosturisticos + A_rea + Pib_ + Pib_cApi - d_pOpu;
-    
+       
     // Cadastro das Cartas:
     // Função scanf para capturar as entradas do usuário para cada atributo.
     // Solicitando ao usuário que insira as informações de cada cidade.
@@ -53,46 +46,53 @@ int main() {
     printf("\n");
 
     printf("Estado: ");
-    scanf(" %c", &eStado);
+    scanf(" %c", &estado1);
 
     printf("Código: ");
-    scanf(" %s", &coDigo);
+    scanf(" %d", &codigo1);
 
     printf("Digite o nome da cidade: ");
-    scanf(" %s", &noMe);
+    scanf(" %s", &cidade1);
 
     printf("Qual é o número da populaçao? ");
-    scanf(" %lf", &poPulacao);
+    scanf(" %lu", &populacao1); // corrigido para %lu
 
     printf("Digite o número de pontos turísticos: ");
-    scanf(" %d", &_numerodepontosturisticos);
+    scanf(" %d", &numero_de_pontos_turisticos1);
 
     printf("Qual a área em metro quadrado: ");
-    scanf(" %lf", &A_rea);
+    scanf(" %f", &area1); //corrigido para %f
 
     printf("Digite o PIB do país: ");
-    scanf(" %lf", &Pib_);
+    scanf(" %f", &pib1); //corrigido para %f
 
-    // novas informacoes (float implicita)
+    float densidade1;
+    float percapita1;
 
-    printf("Densidade populacional: %.2lf \n", d_pOpu);
-    printf("PIB per capita: %.2lf \n", Pib_cApi);
+    float especial1;
 
-    // super poder
+    printf("Densidade populacional: %f \n", densidade1 = (populacao1 / area1)); //corrigido para %f
+    printf("PIB per capita: %f \n", percapita1 = (pib1 / populacao1)); //corrigido para %f
 
-    printf("Superpoder: %f", suPerPower);
+    //nova caracterísca superpoder: soma todos os atributos das cartas exceto estado, codigo e cidade.
+    //densidade populacional é subtraida.
+
+    //printf("testando: %f\n", densidade1);
+    //printf("testando: %f\n", percapita1);
+
+    printf("Especial: %f", especial1 = (populacao1 + numero_de_pontos_turisticos1 + area1 + pib1 + percapita1 - densidade1));
+
+    
 
 
     //Segunda carta do jogo
     //Teste com as variáveis dentro do printf
 
-    char estado, codigo [4], cidade [20];
-    unsigned long int populacao;
-    int pontosturisticos;
-    float area, pib;
-    float densidade = populacao / area;
-    float percapita = pib / populacao;
-    float superpoder = populacao + pontosturisticos + area + pib + percapita - densidade;
+    char estado2, cidade2 [20];
+    unsigned long int populacao2;
+    int codigo2, numero_pontos_turisticos2;
+    float area2, pib2;
+    
 
     printf("\n");
     
@@ -100,34 +100,108 @@ int main() {
 
     printf("\n");
 
-    printf("Estado ", estado);
-    scanf(" %c", &estado);
+    printf("Estado ");
+    scanf(" %c", &estado2);
 
-    printf("Código: ", codigo);
-    scanf(" %s", &codigo);
+    printf("Código: ");
+    scanf(" %d", &codigo2);
 
-    printf("Digite o nome da cidade: ", cidade);
-    scanf(" %s", &cidade);
+    printf("Digite o nome da cidade: ");
+    scanf(" %s", &cidade2);
 
-    printf("Qual é o número da população? ", populacao);
-    scanf(" %lf", &populacao);
+    printf("Qual é o número da população? ");
+    scanf(" %lu", &populacao2); //corrigido para %lu
 
-    printf("Digite o número de pontos turísticos: ", pontosturisticos);
-    scanf("%d", &pontosturisticos);
+    printf("Digite o número de pontos turísticos: ");
+    scanf(" %d", &numero_pontos_turisticos2);
 
-    printf("Qual a área em metros quadrados? ", area);
-    scanf(" %lf", &area);
+    printf("Qual a área em metros quadrados? ");
+    scanf(" %f", &area2); //corrigido para %f
 
-    printf("Digite o PIB do País: ", pib);
-    scanf(" %lf", &pib);
+    printf("Digite o PIB do País: ");
+    scanf(" %f", &pib2); // corrigido para %f
 
     // novas informacoes
-    printf("Desnidade populacional:  %.2lf\n", densidade);
-    printf("PIB per capita: %.2lf\n", percapita);
+    float densidade2;
+    float percapita2;
 
-    // super poder
+    float especial2;
 
-    printf("Superpoder: %f\n", superpoder);
+    printf("Desnidade populacional: %f\n", densidade2 =(populacao2 / area2)); //corrigido para %f
+    printf("PIB per capita: %f\n", percapita2 = (pib2 / populacao2)); //corrigido para %f
+
+    printf("Especial: %f", especial2 = (populacao2 + numero_pontos_turisticos2 + area2 + pib2 + percapita2 - densidade2));
+
+    printf("\n");
+    printf("COMPARAÇÕES DE CARTAS!\n");
+
+    
+    if (populacao1 > populacao2)
+    {
+      printf("Com maior número a população da carta 1 venceu!\n");
+    }
+    else
+    {
+      printf("Com maior número a população da carta 2 venceu!\n");
+    }
+    
+    if (area1 > area2)
+    {
+      printf("com maior área a carta 1 venceu!\n");
+    }
+    else
+    {
+      printf("com maior área a carta 2 venceu!\n");
+    }
+    
+    if (numero_de_pontos_turisticos1 > numero_pontos_turisticos2)
+    {
+      printf("Com maior número de pontos turisticos a carta 1 venceu!\n");
+    }
+    else
+    {
+      printf("Com maior número de pontos turisticos a carta 2 venceu!\n");
+    }
+    
+    if (pib1 > pib2)
+    {
+      printf("Com maior PIB a carta 1 venceu!\n");
+    }
+    else
+    {
+      printf("Com maior número de pontos turisticos a carta 2 venceu!\n");
+    }
+    
+    if (densidade1 < densidade2)
+    {
+        printf("Densidade populacional da carta 1 é menor, portanto leva essa rodada!\n");
+    }
+    else
+    {
+      printf("Densidade populacional da carta 2 é menor, portanto leva essa rodada!\n");
+    }
+    
+    if (percapita1 > percapita2)
+    {
+      printf("Com maior PIB per capita a carta 1 ganha \n");
+    }
+    
+    else
+    {
+      printf("Com maior PIB per capita a carta 2 ganha \n");
+    }
+    
+    if (especial1 > especial2)
+    {
+      printf("A carta 1 possui maior poder especial, então vence!\n");
+    }
+    else
+    {
+      printf("A carta 2 possui maior poder especial, então vence!\n");
+    }
+    
+    
+
 
 
     // Desafio evoluiu para o nível mestre.
