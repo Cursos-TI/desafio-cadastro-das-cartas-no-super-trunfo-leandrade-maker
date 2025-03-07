@@ -1,14 +1,10 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
+// Desafio Super Trunfo - Países: Base para o sistema de cadastro de cartas de cidades.
 
 int main() {
 
-    // Nivel novato.
-    // Definnindo e inicializando variáveis separadas para cada atributo da cidade.
-    // Atributos: Estado, código da cidade, nome, população, área, PIB, número de pontos turísticos.
+    // Nível Novato: Inicialização de variáveis para atributos da cidade.
 
     char estado1;
     int codigo1;
@@ -18,25 +14,22 @@ int main() {
     float area1;
     float pib1;
 
-    // declaração novas variaveis desnidade populacional e pib per capita.
-    // inicialização das novas variaveis para o nível aventureiro.
-
-
-    // Declaração da variavel super poder para o nível mestre.
-    // Calcular o super poder somando todas as características (exeto estado, código e nome).
-    // O inverso da densidade populacional (subtrair).
+    /*   
+    Nível Novato: Inicialização de variáveis para atributos da cidade.
+    
+    Nível aventureiro: Declaração de densidade populacional e PIB per capita; 
+    inicialização no nível aventureiro com cálculo por divisão.
+       
+    Nível Mestre: Adição do "super poder" e mudança de tipo para população; 
+    cálculo do super poder (soma das características - densidade);
+    exceto estado, código e cidade.
+    Comparações de cartas.
+    */
 
        
-    // Cadastro das Cartas:
-    // Função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicitando ao usuário que insira as informações de cada cidade.
-
-    // Exibição dos Dados das Cartas: printf.
-
-    /* Desafio evoluiou para o nível aventureiro. 
-       Duas novas características de cada estado: desnidade populacional e PIB per capita
-       Operadores matemáticos inseridos para o cálculo: divisão (/)
-    */
+    // Cadastro: Uso de scanf para capturar dados do usuário.
+    // Exibição dos dados com printf.
+    
 
     printf ("Jogo de cartas Super trunfo! \n");
 
@@ -74,19 +67,12 @@ int main() {
     printf("Densidade populacional: %f \n", densidade1 = (populacao1 / area1)); //corrigido para %f
     printf("PIB per capita: %f \n", percapita1 = (pib1 / populacao1)); //corrigido para %f
 
-    //nova caracterísca superpoder: soma todos os atributos das cartas exceto estado, codigo e cidade.
-    //densidade populacional é subtraida.
-
-    //printf("testando: %f\n", densidade1);
-    //printf("testando: %f\n", percapita1);
-
     printf("Especial: %f", especial1 = (populacao1 + numero_de_pontos_turisticos1 + area1 + pib1 + percapita1 - densidade1));
 
     
 
 
     //Segunda carta do jogo
-    //Teste com as variáveis dentro do printf
 
     char estado2, cidade2 [20];
     unsigned long int populacao2;
@@ -134,94 +120,24 @@ int main() {
 
     printf("\n");
     printf("COMPARAÇÕES DE CARTAS!\n");
+    printf("\n");
 
+    printf("Para cada comparação, se o resultado for 1, a carta 1 ganhou, se for 0, a carta 2 ganhou \n");
     
-    if (populacao1 > populacao2)
-    {
-      printf("Com maior número a população da carta 1 venceu!\n");
-    }
-    else
-    {
-      printf("Com maior número a população da carta 2 venceu!\n");
-    }
-    
-    if (area1 > area2)
-    {
-      printf("com maior área a carta 1 venceu!\n");
-    }
-    else
-    {
-      printf("com maior área a carta 2 venceu!\n");
-    }
-    
-    if (numero_de_pontos_turisticos1 > numero_pontos_turisticos2)
-    {
-      printf("Com maior número de pontos turisticos a carta 1 venceu!\n");
-    }
-    else
-    {
-      printf("Com maior número de pontos turisticos a carta 2 venceu!\n");
-    }
-    
-    if (pib1 > pib2)
-    {
-      printf("Com maior PIB a carta 1 venceu!\n");
-    }
-    else
-    {
-      printf("Com maior número de pontos turisticos a carta 2 venceu!\n");
-    }
-    
-    if (densidade1 < densidade2)
-    {
-        printf("Densidade populacional da carta 1 é menor, portanto leva essa rodada!\n");
-    }
-    else
-    {
-      printf("Densidade populacional da carta 2 é menor, portanto leva essa rodada!\n");
-    }
-    
-    if (percapita1 > percapita2)
-    {
-      printf("Com maior PIB per capita a carta 1 ganha \n");
-    }
-    
-    else
-    {
-      printf("Com maior PIB per capita a carta 2 ganha \n");
-    }
-    
-    if (especial1 > especial2)
-    {
-      printf("A carta 1 possui maior poder especial, então vence!\n");
-    }
-    else
-    {
-      printf("A carta 2 possui maior poder especial, então vence!\n");
-    }
-    
-    
-
-
-
-    // Desafio evoluiu para o nível mestre.
-    // nova característica: super poder.
-    // nesse nível mudança da variável poPulacao de "float" para "unsigned long int".
-    
-    
+    printf("População: %d \n", populacao1 > populacao2);
+    printf("Número de pontos turísticos: %d \n", numero_de_pontos_turisticos1 > numero_pontos_turisticos2);
+    printf("Area: %d \n", area1 > area2);
+    printf("PIB: %d \n", pib1 > pib2);
+    printf("Densidade populacional: %d \n", densidade1 < densidade2);
+    printf("PIB per capita: %d \n", percapita1 > percapita2); // operador de atribuição corrigido
 
 
 
 
     /*
-    OBSERVAÇÃO
-    Notei que ao tentar incerir números de tipo float com mais de dois pontos(ex: 400.200.300),
-    oprograma não rodou pois o scanf não interpreta isso como um número valido uma vez que o formato
-    esperado para float ou double é de um número que contenha apenas um número (ex: 400.300).
-    
-    Quando o scanf encontra um formato inesperado, ele não consegue processar a entrada e, por isso, 
-    não lê o restante das informações. O programa pode ficar "preso" esperando uma entrada válida, 
-    pois o buffer de entrada ainda contém o que foi digitado.
+   Observação: O scanf não aceita números float com múltiplos pontos (ex: 400.200.300), 
+   causando erro ao processar a entrada. Isso impede a leitura correta e pode travar o programa, 
+   pois o buffer de entrada mantém o valor inválido.
     */
 
 
